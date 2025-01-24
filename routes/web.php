@@ -16,11 +16,11 @@ use App\Http\Controllers\PedidoController;
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/home', function () {
+    return view('home');
 });
-*/
+
 
 Route::get('/usuarios', [UsuarioController::class,'indice'])->name('rutaIndiceUsuario');
 
@@ -38,9 +38,9 @@ Route::get('/usuarios/delete/{id}', [UsuarioController::class,'delete'])->name('
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/productos', [ProductoController::class,'indice']);
+Route::get('/productos', [ProductoController::class,'indice'])->name('rutaIndiceProducto');
 
-Route::get('/pedidos', [PedidoController::class,'indice']);
+Route::get('/pedidos', [PedidoController::class,'indice'])->name('rutaIndicePedido');
 
 Route::get('/saludo', [UsuarioController::class,'saludo']);
 

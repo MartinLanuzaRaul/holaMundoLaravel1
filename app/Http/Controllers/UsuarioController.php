@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 
 
+
 class UsuarioController extends Controller
 {
     /*
@@ -41,6 +42,8 @@ class UsuarioController extends Controller
         return view('nuevoUsuario');
 
     }
+
+    
 
     public function add(AddUsuarioRequest $request){
 
@@ -81,7 +84,7 @@ class UsuarioController extends Controller
     }
 
     public function delete($id){
-
+        
         $usuario = Usuario::find($id);
         $usuario->delete();
 

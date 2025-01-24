@@ -22,8 +22,8 @@ class AddUsuarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'nombre' => 'required|string|max:100|unique:usuarios' ,
-                'email' => 'required|email|max:255' ,
+                'nombre' => 'required|string|max:100' ,
+                'email' => 'required|email|max:255|unique:usuarios' ,
                 'edad' => 'required|integer|min:1|max:150' 
         ];
     }
@@ -33,7 +33,8 @@ class AddUsuarioRequest extends FormRequest
         return[
             'nombre.required' => 'El nombre es requerido' ,
             'email.required' => 'El email es requerido' ,
-            'edad.required' => 'El edad es requerido' 
+            'edad.required' => 'El edad es requerido'  ,
+            'email.unique' => 'Ya existe un usuario con ese email' 
         ];
 
     }
